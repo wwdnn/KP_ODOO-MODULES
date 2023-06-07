@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     
-    'name': "wn_training_odoo",
+    'name': "Manajemen Transportasi (Wildan)",
 
     # ini versi singkat
     'summary': """
@@ -9,10 +9,18 @@
 
     # ini versi panjang
     'description': """
-        Long description of module's purpose
+        Modul untuk Manajemen Transportasi dengan fitur: 
+        - Kendaraan
+        - Driver
+        - Rute
+        - Perjalanan
+        - Penumpang
+        - Tiket
+        - Pembayaran
+        - Laporan
     """,
 
-    'author': "My Company",
+    'author': "Wildan Setya Nugraha",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -26,9 +34,12 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/menu_items.xml',
+        'views/res_passenger_view.xml',
+        'views/res_bus_view.xml',
+        'views/res_schedule_view.xml',
+        'views/bus_route_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

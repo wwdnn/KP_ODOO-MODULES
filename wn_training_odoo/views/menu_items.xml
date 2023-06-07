@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+    <!-- Action Passenger -->
+      <record id="res_passenger_action" model="ir.actions.act_window">
+          <field name="name">Passanger</field>
+          <field name="res_model">res.passenger</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <!-- Action Bus -->
+      <record id="res_bus_action" model="ir.actions.act_window">
+          <field name="name">Bus</field>
+          <field name="res_model">res.bus</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <!-- Action Bus Schedule -->
+      <record id="res_schedule_action" model="ir.actions.act_window">
+          <field name="name">Schedule</field>
+          <field name="res_model">res.schedule</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <!-- Action Bus Route -->
+      <record id="bus_route_action" model="ir.actions.act_window">
+          <field name="name">Bus Route</field>
+          <field name="res_model">bus.route</field>
+          <field name="view_mode">tree</field>
+      </record>
+
+      <!-- Menu Item Root -->
+      <menuitem 
+        id="root_menu_transportation_management" 
+        name="Transportation Management"
+        web_icon="wn_training_odoo,static/description/icon.png"
+      />
+
+      <!-- Submenu Item Passenger -->
+      <menuitem 
+        id="res_passenger_menu" 
+        name="Passenger"
+        parent="root_menu_transportation_management"
+        action="res_passenger_action"
+      />
+
+      <!-- Submenu Item Bus -->
+      <menuitem 
+        id="res_bus_menu" 
+        name="Bus"
+        parent="root_menu_transportation_management"
+        action="res_bus_action"
+      />
+
+      <!-- Submenu Item Schedule Bus -->
+      <menuitem 
+        id="res_schedule_menu" 
+        name="Schedule"
+        parent="root_menu_transportation_management"
+        action="res_schedule_action"
+      />
+
+      <!-- Submenu Item Configuration -->
+      <menuitem 
+        id="root_menu_configuration" 
+        name="Configuration"
+        parent="root_menu_transportation_management"
+      />
+
+      <!-- Submenu Item Bus Route -->
+      <menuitem 
+        id="bus_route_menu" 
+        name="Route"
+        parent="root_menu_configuration"
+        action="bus_route_action"
+      />
+
+    </data>
+</odoo>

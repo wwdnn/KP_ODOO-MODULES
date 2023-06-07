@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_wn_training_odoo_wn_training_odoo,wn_training_odoo.wn_training_odoo,model_wn_training_odoo_wn_training_odoo,base.group_user,1,1,1,1
+access_res_passenger,access_res_passenger,model_res_passenger,base.group_user,1,1,1,1
+access_res_bus,access_res_bus,model_res_bus,base.group_user,1,1,1,1
+access_res_schedule,access_res_schedule,model_res_schedule,base.group_user,1,1,1,1
+access_bus_route,access_bus_route,model_bus_route,base.group_user,1,1,1,1

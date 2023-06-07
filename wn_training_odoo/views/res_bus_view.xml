@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!-- List View -->
+    <record model="ir.ui.view" id="res_bus_tree">
+      <field name="name">res.bus.tree</field>
+      <field name="model">res.bus</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="image" widget="image"/>
+          <field name="name"/>
+          <field name="code"/>
+          <field name="capacity"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form View -->
+    <record model="ir.ui.view" id="res_bus_form">
+      <field name="name">res.bus.form</field>
+      <field name="model">res.bus</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+          </header>
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="name" />
+              </h1>
+            </div>
+
+            <group>
+              <field name="code"/>
+              <field name="capacity"/>
+              <field name="image" widget="image" class="oe_avatar oe_left" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>
