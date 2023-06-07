@@ -1,0 +1,24 @@
+// -- ------------------------------------
+// -- Perhatian
+// -- Khusus untuk Windows User : 
+// -- hasil dari Copy Path harus diganti dengan double-backslash \\
+// -- ------------------------------------
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Odoo",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "console": "integratedTerminal",
+            "python": "C:/Program Files/Odoo14/python/pyodoo14.exe",
+            "program": "C:/Program Files/Odoo14/server/odoo-bin",
+            "args": [
+                "--config=C:/Program Files/Odoo14/server/odoo.conf",
+                "--database=TRAINING",
+                "--update=wn_training_odoo"
+            ]
+        }
+    ]
+}
