@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <data>
+
     <!-- List View -->
     <record model="ir.ui.view" id="res_schedule_tree">
       <field name="name">res.schedule.tree</field>
@@ -15,15 +16,18 @@
         </tree>
       </field>
     </record>
+    <!-- End List View -->
 
     <!-- Form View -->
     <record model="ir.ui.view" id="res_schedule_form">
       <field name="name">res.schedule.form</field>
       <field name="model">res.schedule</field>
       <field name="arch" type="xml">
+        <!-- Form -->
         <form>
           <header>
           </header>
+          <!-- Sheet Form -->
           <sheet>
             <div class="oe_title">
               <h1>
@@ -38,9 +42,12 @@
               <field name="arrival"/>
             </group>
           </sheet>
+          <!-- End Sheet Form -->
         </form>
+        <!-- End Form -->
       </field>
     </record>
+    <!-- End Form View -->
 
   </data>
 </odoo>

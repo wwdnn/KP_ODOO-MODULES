@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+
         <!-- List View -->
         <record model="ir.ui.view" id="bus_route_tree">
             <field name="name">bus.route.tree</field>
@@ -11,5 +12,7 @@
                 </tree>
             </field>
         </record>
+        <!-- End List View -->
+        
     </data>
 </odoo>

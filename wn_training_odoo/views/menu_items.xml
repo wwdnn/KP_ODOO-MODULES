@@ -2,40 +2,19 @@
 <odoo>
     <data>
 
-    <!-- Action Passenger -->
-      <record id="res_passenger_action" model="ir.actions.act_window">
-          <field name="name">Passanger</field>
-          <field name="res_model">res.passenger</field>
-          <field name="view_mode">tree,form</field>
-      </record>
-
-      <!-- Action Bus -->
-      <record id="res_bus_action" model="ir.actions.act_window">
-          <field name="name">Bus</field>
-          <field name="res_model">res.bus</field>
-          <field name="view_mode">tree,form</field>
-      </record>
-
-      <!-- Action Bus Schedule -->
-      <record id="res_schedule_action" model="ir.actions.act_window">
-          <field name="name">Schedule</field>
-          <field name="res_model">res.schedule</field>
-          <field name="view_mode">tree,form</field>
-      </record>
-
-      <!-- Action Bus Route -->
-      <record id="bus_route_action" model="ir.actions.act_window">
-          <field name="name">Bus Route</field>
-          <field name="res_model">bus.route</field>
-          <field name="view_mode">tree</field>
-      </record>
-
       <!-- Menu Item Root -->
       <menuitem 
         id="root_menu_transportation_management" 
         name="Transportation Management"
         web_icon="wn_training_odoo,static/description/icon.png"
       />
+
+      <!-- Action Passenger -->
+      <record id="res_passenger_action" model="ir.actions.act_window">
+          <field name="name">Passanger</field>
+          <field name="res_model">res.passenger</field>
+          <field name="view_mode">tree,form</field>
+      </record>
 
       <!-- Submenu Item Passenger -->
       <menuitem 
@@ -45,6 +24,13 @@
         action="res_passenger_action"
       />
 
+      <!-- Action Bus -->
+      <record id="res_bus_action" model="ir.actions.act_window">
+          <field name="name">Bus</field>
+          <field name="res_model">res.bus</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
       <!-- Submenu Item Bus -->
       <menuitem 
         id="res_bus_menu" 
@@ -52,6 +38,13 @@
         parent="root_menu_transportation_management"
         action="res_bus_action"
       />
+
+      <!-- Action Bus Schedule -->
+      <record id="res_schedule_action" model="ir.actions.act_window">
+          <field name="name">Schedule</field>
+          <field name="res_model">res.schedule</field>
+          <field name="view_mode">tree,form</field>
+      </record>
 
       <!-- Submenu Item Schedule Bus -->
       <menuitem 
@@ -67,6 +60,13 @@
         name="Configuration"
         parent="root_menu_transportation_management"
       />
+
+      <!-- Action Bus Route -->
+      <record id="bus_route_action" model="ir.actions.act_window">
+          <field name="name">Bus Route</field>
+          <field name="res_model">bus.route</field>
+          <field name="view_mode">tree</field>
+      </record>
 
       <!-- Submenu Item Bus Route -->
       <menuitem 
