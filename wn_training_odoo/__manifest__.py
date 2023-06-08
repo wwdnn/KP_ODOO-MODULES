@@ -30,16 +30,18 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'hr'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'data/sequence.xml',
         'views/menu_items.xml',
         'views/res_passenger_view.xml',
         'views/res_bus_view.xml',
-        'views/res_schedule_view.xml',
+        'views/bus_schedule_view.xml',
         'views/bus_route_view.xml',
+        'views/hr_employee_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

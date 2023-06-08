@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="wn_training_odoo_hr_employee_view_form">
+            <field name="name">wn.training.odoo.hr.employee.view.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='coach_id']" position="after">
+                    <field name="is_driver"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

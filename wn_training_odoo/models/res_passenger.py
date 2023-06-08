@@ -9,3 +9,4 @@ class ResPassenger(models.Model):
     weight = fields.Float(string='Weight(Kg)')
     height = fields.Float(string='Height(Cm)')
     born_date = fields.Date(string='Born Date')
+    gender = fields.Selection([("man","Man"),("woman","Woman")], string='Gender')

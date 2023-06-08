@@ -40,18 +40,18 @@
       />
 
       <!-- Action Bus Schedule -->
-      <record id="res_schedule_action" model="ir.actions.act_window">
+      <record id="bus_schedule_action" model="ir.actions.act_window">
           <field name="name">Schedule</field>
-          <field name="res_model">res.schedule</field>
+          <field name="res_model">bus.schedule</field>
           <field name="view_mode">tree,form</field>
       </record>
 
       <!-- Submenu Item Schedule Bus -->
       <menuitem 
-        id="res_schedule_menu" 
+        id="bus_schedule_menu" 
         name="Schedule"
         parent="root_menu_transportation_management"
-        action="res_schedule_action"
+        action="bus_schedule_action"
       />
 
       <!-- Submenu Item Configuration -->

@@ -3,9 +3,9 @@
   <data>
 
     <!-- List View -->
-    <record model="ir.ui.view" id="res_schedule_tree">
-      <field name="name">res.schedule.tree</field>
-      <field name="model">res.schedule</field>
+    <record model="ir.ui.view" id="bus_schedule_tree">
+      <field name="name">bus.schedule.tree</field>
+      <field name="model">bus.schedule</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -19,9 +19,9 @@
     <!-- End List View -->
 
     <!-- Form View -->
-    <record model="ir.ui.view" id="res_schedule_form">
-      <field name="name">res.schedule.form</field>
-      <field name="model">res.schedule</field>
+    <record model="ir.ui.view" id="bus_schedule_form">
+      <field name="name">bus.schedule.form</field>
+      <field name="model">bus.schedule</field>
       <field name="arch" type="xml">
         <!-- Form -->
         <form>
@@ -36,11 +36,34 @@
             </div>
 
             <group>
+              <field name="bus_id"/>
+              <field name="capacity"/>
               <field name="schedule"/>
               <field name="payment_type"/>
               <field name="departure"/>
               <field name="arrival"/>
             </group>
+
+            <!-- Tab Bar -->
+            <notebook>
+              <page string="Passenger">
+                <field name="passenger_ids">
+                  <tree>
+                    <field name="name"/>
+                    <field name="gender"/>
+                  </tree>
+                </field>
+              </page>
+              <page string="Baggage">
+                <field name="baggage_line_ids">
+                  <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="weight"/>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+            <!-- End Tab Bar -->
           </sheet>
           <!-- End Sheet Form -->
         </form>
