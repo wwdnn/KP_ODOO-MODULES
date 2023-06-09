@@ -9,3 +9,14 @@ class ResBus(models.Model):
     code = fields.Char(string='Code')
     capacity = fields.Integer(string='Capacity')
     image = fields.Binary(string='Image')
+    # state selection
+    state = fields.Selection(
+        selection=[
+            ("draft", "Draft"),
+            ("ready", "Ready"),
+            ("mt", "Maintenance"),
+            ("depr", "Deprecated"),
+        ],
+        string="Status",
+        default="draft"
+    )

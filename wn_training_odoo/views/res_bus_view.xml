@@ -12,6 +12,7 @@
           <field name="name"/>
           <field name="code"/>
           <field name="capacity"/>
+          <field name="state"/>
         </tree>
       </field>
     </record>
@@ -25,6 +26,7 @@
         <!-- Form -->
         <form>
           <header>
+            <field name="state" widget="statusbar" options="{ 'clickable': '1'}"/>
           </header>
           <!-- Sheet Form -->
           <sheet>

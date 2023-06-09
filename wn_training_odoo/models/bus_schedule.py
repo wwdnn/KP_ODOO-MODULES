@@ -31,6 +31,17 @@ class BusSchedule(models.Model):
         string='Capacity',
         related='bus_id.capacity',
     )
+    # state selection
+    state = fields.Selection(
+        selection=[
+            ("draft", "Draft"),
+            ("submit", "Submitted"),
+            ("run", "On Going"),
+            ("done", "Done"),
+        ],
+        string="Status",
+        default="draft",
+    )
 
     @api.model
     def create(self, values):
@@ -39,7 +50,27 @@ class BusSchedule(models.Model):
         result['name'] = self.env['ir.sequence'].next_by_code('bus.schedule.sequence')
 
         return result
+    
+    # button action for submit
+    def button_submit(self):
+        for rec in self:
+            rec.write({
+                'state': 'submit'
+            })
 
+    # button action for run
+    def button_run(self):
+        for rec in self:
+            rec.write({
+                'state': 'run'
+            })
+    
+    # button action for done
+    def button_done(self):
+        for rec in self:
+            rec.write({
+                'state': 'done'
+            })
 
 class Baggage(models.Model):
     _name = 'baggage.baggage'
