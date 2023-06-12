@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data noupdate="1">
+
+    <!-- Data Bus Route -->
+    <record id="bus_route_001" model="bus.route">
+      <field name="name">BDG-JKT</field>
+    </record>
+
+    <record id="bus_route_002" model="bus.route">
+      <field name="name">JKT-BDG</field>
+    </record>
+
+    <record id="bus_route_003" model="bus.route">
+      <field name="name">BDG-TSK</field>
+    </record>
+
+    <record id="bus_route_004" model="bus.route">
+      <field name="name">TSK-BDG</field>
+    </record>
+
+    <record id="bus_route_005" model="bus.route">
+      <field name="name">BDG-BGR</field>
+    </record>
+
+    <!-- Data Bus -->
+    <record id="bus_001" model="res.bus">
+      <field name="name">Damri</field>
+      <field name="code">Bus001</field>
+      <field name="capacity">40</field>
+      <field name="image" eval="None"/>
+      <field name="state">draft</field>
+    </record>
+
+    <record id="bus_002" model="res.bus">
+      <field name="name">PO Haryanto</field>
+      <field name="code">Bus002</field>
+      <field name="capacity">60</field>
+      <field name="image" eval="None"/>
+      <field name="state">draft</field>
+    </record>
+
+    <record id="bus_003" model="res.bus">
+      <field name="name">Transjakarta</field>
+      <field name="code">Bus003</field>
+      <field name="capacity">70</field>
+      <field name="image" eval="None"/>
+      <field name="state">draft</field>
+    </record>
+
+    <record id="bus_004" model="res.bus">
+      <field name="name">Pahala Kencana</field>
+      <field name="code">Bus004</field>
+      <field name="capacity">75</field>
+      <field name="image" eval="None"/>
+      <field name="state">draft</field>
+    </record>
+
+    <record id="bus_005" model="res.bus">
+      <field name="name">Primajasa</field>
+      <field name="code">Bus005</field>
+      <field name="capacity">45</field>
+      <field name="image" eval="None"/>
+      <field name="state">draft</field>
+    </record>
+
+    <!-- Data Passenger -->
+    <record id="passenger_001" model="res.passenger">
+      <field name="name">Wildan</field>
+      <field name="weight">80</field>
+      <field name="height">170</field>
+      <field name="born_date" eval="DateTime.strptime('12/06/2023', '%d/%m/%Y')"/>
+      <field name="gender">man</field>
+    </record>
+
+    <record id="passenger_002" model="res.passenger">
+      <field name="name">Hilman</field>
+      <field name="weight">80</field>
+      <field name="height">175</field>
+      <field name="born_date" eval="DateTime.strptime('12/06/2023', '%d/%m/%Y')"/>
+      <field name="gender">man</field>
+    </record>
+
+    <record id="passenger_003" model="res.passenger">
+      <field name="name">Nurul Anisah</field>
+      <field name="weight">50</field>
+      <field name="height">165</field>
+      <field name="born_date" eval="DateTime.strptime('12/06/2023', '%d/%m/%Y')"/>
+      <field name="gender">woman</field>
+    </record>
+
+    <!-- Data Schedule -->
+    <record id="bus_schedule_bdg_jkt" model="bus.schedule">
+      <field name="bus_id" ref="wn_training_odoo.bus_001" />
+      <field name="route_id" ref="wn_training_odoo.bus_route_002" />
+      <field name="schedule" eval="DateTime.strptime('12/05/2023 11:45:21', '%d/%m/%Y %H:%M:%S')" />
+      <field name="departure" eval="DateTime.strptime('12/05/2023 12:00:00', '%d/%m/%Y %H:%M:%S')" />
+      <field name="arrival" eval="DateTime.strptime('12/05/2023 18:00:00', '%d/%m/%Y %H:%M:%S')" />
+      <field name="passenger_ids" eval="[
+        (4, ref('wn_training_odoo.passenger_001')),
+        (0, 0, {
+        'name' : 'Ari Maulana',
+        'weight' : 87.0,
+        'height' : 167.0,
+        'gender' : 'man'
+        }),
+        (4, ref('wn_training_odoo.passenger_002'))
+      ]"/>
+      <field name="baggage_line_ids" eval="[
+        (0, 0, {
+          'name' : 'Bagasi 1',
+          'weight' : '40',
+        }),
+        (0, 0, {
+          'name' : 'Bagasi 2',
+          'weight' : '50',
+        }),
+        (0, 0, {
+          'name' : 'Bagasi 4',
+          'weight' : '45',
+        }),
+      ]"/>
+    </record>
+  </data>
+</odoo>

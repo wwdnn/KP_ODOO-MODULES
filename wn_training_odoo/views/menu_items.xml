@@ -31,12 +31,38 @@
           <field name="view_mode">tree,form</field>
       </record>
 
+      <!-- Action Employee Driver -->
+      <record id="driver_action" model="ir.actions.act_window">
+          <field name="name">Driver</field>
+          <field name="res_model">hr.employee</field>
+          <field name="view_mode">tree,form,kanban</field>
+          <field name="domain">[('is_driver', '=', True)]</field>
+          <field name="context">{
+            'default_is_driver': True,
+          }</field>
+      </record>
+
       <!-- Submenu Item Bus -->
       <menuitem 
         id="res_bus_menu" 
         name="Bus"
         parent="root_menu_transportation_management"
+      />
+
+      <!-- Submenu Bus in menu bus -->
+      <menuitem 
+        id="bus_menu" 
+        name="Bus"
+        parent="res_bus_menu"
         action="res_bus_action"
+      />
+
+      <!-- Submenu Driver in Menu Bus -->
+      <menuitem 
+        id="driver_menu" 
+        name="Driver"
+        parent="res_bus_menu"
+        action="driver_action"
       />
 
       <!-- Action Bus Schedule -->

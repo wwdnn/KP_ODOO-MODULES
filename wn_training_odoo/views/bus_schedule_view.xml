@@ -13,7 +13,13 @@
           <field name="payment_type"/>
           <field name="departure"/>
           <field name="arrival"/>
-          <field name="state"/>
+          <field 
+            name="state"
+            widget="badge"
+            decoration-muted="state == 'draft'"
+            decoration-info="state in ['submit', 'run']"
+            decoration-success="state == 'done'"
+          />
         </tree>
       </field>
     </record>
