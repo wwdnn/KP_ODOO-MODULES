@@ -4,32 +4,38 @@ from odoo.exceptions import UserError
 class BusSchedule(models.Model):
     _name = 'bus.schedule'
     _description = 'Schedule'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string='Name', default="New", readonly=True)
-    schedule = fields.Datetime(string="Schedule")
-    payment_type = fields.Selection([("cash","Cash"),("transfer","Transfer")], string='Payment')
-    departure = fields.Datetime(string="Departure")
-    arrival = fields.Datetime(string="Arrival")
+    schedule = fields.Datetime(string="Schedule", tracking=True)
+    payment_type = fields.Selection([("cash","Cash"),("transfer","Transfer")], string='Payment', tracking=True)
+    departure = fields.Datetime(string="Departure", tracking=True)
+    arrival = fields.Datetime(string="Arrival", tracking=True)
     bus_id = fields.Many2one(
         comodel_name='res.bus',
         string='Bus',
+        tracking=True,
     )
     route_id = fields.Many2one(
         comodel_name='bus.route',
         string='Route',
+        tracking=True,
     )
     baggage_line_ids = fields.One2many(
         comodel_name='baggage.baggage',
         inverse_name='schedule_id',
         string='Baggage(s)',
+        tracking=True,
     )
     passenger_ids = fields.Many2many(
         comodel_name='res.passenger', 
-        string='Passenger(s)'
+        string='Passenger(s)',
+        tracking=True,
     )
     capacity = fields.Integer(
         string='Capacity',
         related='bus_id.capacity',
+        tracking=True,
     )
     # state selection
     state = fields.Selection(
@@ -41,6 +47,7 @@ class BusSchedule(models.Model):
         ],
         string="Status",
         default="draft",
+        tracking=True,
     )
 
     @api.model

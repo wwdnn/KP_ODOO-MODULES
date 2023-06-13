@@ -99,10 +99,10 @@
       <field name="passenger_ids" eval="[
         (4, ref('wn_training_odoo.passenger_001')),
         (0, 0, {
-        'name' : 'Ari Maulana',
-        'weight' : 87.0,
-        'height' : 167.0,
-        'gender' : 'man'
+          'name' : 'Ari Maulana',
+          'weight' : 87.0,
+          'height' : 167.0,
+          'gender' : 'man'
         }),
         (4, ref('wn_training_odoo.passenger_002'))
       ]"/>

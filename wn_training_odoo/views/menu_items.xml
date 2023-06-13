@@ -28,7 +28,7 @@
       <record id="res_bus_action" model="ir.actions.act_window">
           <field name="name">Bus</field>
           <field name="res_model">res.bus</field>
-          <field name="view_mode">tree,form</field>
+          <field name="view_mode">tree,form,kanban</field>
       </record>
 
       <!-- Action Employee Driver -->

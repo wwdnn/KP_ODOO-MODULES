@@ -12,18 +12,33 @@
           <field name="name"/>
           <field name="code"/>
           <field name="capacity"/>
-          <field 
-            name="state" 
-            widget="badge" 
-            decoration-muted="state == 'draft'" 
-            decoration-success="state == 'ready'"
-            decoration-warning="state == 'mt'"
-            decoration-danger="state == 'depr'"
-          />
+          <field name="state" widget="badge" decoration-muted="state == 'draft'" decoration-success="state == 'ready'" decoration-warning="state == 'mt'" decoration-danger="state == 'depr'" />
         </tree>
       </field>
     </record>
     <!-- End List View -->
+
+    <!-- Kanban View -->
+    <record model="ir.ui.view" id="res_bus_kanban">
+      <field name="name">res.bus.kanban</field>
+      <field name="model">res.bus</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click oe_kanban_inline">
+                kanban full
+                <div class="oe_kanban_contents">
+                  tes kanban content
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <!-- End Kanban View -->
 
     <!-- Form View -->
     <record model="ir.ui.view" id="res_bus_form">
@@ -50,6 +65,13 @@
             </group>
           </sheet>
           <!-- End Sheet Form -->
+          <!-- Logging -->
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers"/>
+            <field name="message_ids" widget="mail_thread"/>
+            <field name="activity_ids" widget="mail_activity"/>
+          </div>
+          <!-- End Logging -->
         </form>
         <!-- End Form -->
       </field>

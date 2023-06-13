@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data noupdate="0">
+
+    <record id="bus_schedule_action_server" model="ir.actions.server">
+      <field name="name">Submit</field>
+      <field name="model_id" ref="wn_training_odoo.model_bus_schedule" />
+      <field name="binding_model_id" ref="wn_training_odoo.model_bus_schedule"/>
+      <field name="state">code</field>
+      <field name="code">
+        for item in records:
+          if item.state == 'draft':
+            item.button_submit()
+      </field>
+    </record>
+
+    <record id="bus_schedule_action_server" model="ir.actions.server">
+      <field name="name">Run</field>
+      <field name="model_id" ref="wn_training_odoo.model_bus_schedule" />
+      <field name="binding_model_id" ref="wn_training_odoo.model_bus_schedule"/>
+      <field name="state">code</field>
+      <field name="code">
+        for item in records:
+          if item.state == 'submit':
+            item.button_run()
+      </field>
+    </record>
+
+  </data>
+</odoo>
