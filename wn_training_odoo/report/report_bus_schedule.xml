@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+      <template id="report_id_bus_schedule">
+        <t t-call="web.html_container">
+          <t t-set="print_header" t-value="True"/>
+          <t t-foreach="docs" t-as="o">
+             <div class="page">
+              <!-- table schedule -->
+              <table 
+                style="
+                  width: 100%;
+                  border-collapse: collapse;
+                  border: 1px solid black;
+                  table-layout: fixed;
+                "
+              >
+                <t t-if="print_header">
+                  <t t-set="print_header" t-value="False"/>
+                  <thead
+                    style="
+                      background-color: #4CAF50;
+                      color: white;
+                      font-weight: bold;
+                      text-align: center;
+                      font-size: 20px;
+                    "
+                  >
+                    <tr>
+                      <th style="border: 1px solid black; padding: 15px;">Bus</th>
+                      <th style="border: 1px solid black; padding: 15px;">Route</th>
+                      <th style="border: 1px solid black; padding: 15px;">Departure</th>
+                      <th style="border: 1px solid black; padding: 15px;">Arrival</th>
+                    </tr>
+                  </thead>
+                </t>
+                <tbody>
+                  <tr>
+                    <td style="border: 1px solid black; padding: 8px;"><t t-esc="o.bus_id.name"/></td>
+                    <td style="border: 1px solid black; padding: 8px;"><t t-esc="o.route_id.name"/></td>
+                    <td style="border: 1px solid black; padding: 8px;"><t t-esc="o.departure"/></td>
+                    <td style="border: 1px solid black; padding: 8px;"><t t-esc="o.arrival"/></td>
+                  </tr>
+                </tbody>
+              </table>
+             </div>
+          </t>
+        </t>
+      </template>
+
+    </data>
+</odoo>

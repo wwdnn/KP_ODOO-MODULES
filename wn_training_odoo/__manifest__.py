@@ -44,6 +44,8 @@
         'views/bus_schedule_view.xml',
         'views/bus_route_view.xml',
         'views/hr_employee_view.xml',
+        'report/report.xml',
+        'report/report_bus_schedule.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

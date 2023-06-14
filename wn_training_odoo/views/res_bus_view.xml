@@ -27,11 +27,52 @@
           <field name="id"/>
           <templates>
             <t t-name="kanban-box">
-              <div class="oe_kanban_global_click oe_kanban_inline">
-                kanban full
-                <div class="oe_kanban_contents">
-                  tes kanban content
+              <div 
+                class="oe_kanban_global_click"
+                style="
+                  border-radius: 25px;
+                  padding: 0;
+                "
+              >
+                <div class="image-content-wrapper">
+                  <img 
+                    t-att-src="kanban_image('res.bus', 'image', record.id.raw_value)" 
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      border-radius: 25px;
+                    "
+                  />
                 </div>
+
+                <div class="bus-contents-wrapper"
+                  style="margin: 10px"
+                >
+                  <div class="bus-capacity-wrapper"
+                    style="
+                      background-color: #0079FF;
+                      border-radius: 25px;
+                      padding: 5px;
+                      color: white;
+                      font-weight: bold;
+                      text-align: center;
+                      align-items: center;
+                      width: 50%;
+                      display: flex;
+                      justify-content: center;
+                    "
+                  >
+                      Kapasitas : <field name="capacity"/>
+                  </div>
+
+                  <div class="bus-name-wrapper"
+
+                  >
+                  <h1><field name="name"/></h1>
+                  </div>
+
+                </div>
+                
               </div>
             </t>
           </templates>
