@@ -78,6 +78,24 @@ class BusSchedule(models.Model):
             rec.write({
                 'state': 'done'
             })
+    
+    @api.onchange('arrival', 'departure')
+    def check_date(self):
+        for rec in self:
+            if rec.arrival and rec.departure:
+                if rec.arrival < rec.departure:
+                    raise UserError(_("Tanggal kedatangan tidak boleh lebih kecil dari tanggal keberangkatan!"))
+                
+    
+    
+    @api.constrains('passenger_ids')
+    def _check_passenger_ids(self):
+        for rec in self:
+            if rec.passenger_ids:
+                if len(rec.passenger_ids) > rec.capacity:
+                    raise UserError(_("Jumlah penumpang melebihi kapasitas bus!"))
+    
+    
 
 class Baggage(models.Model):
     _name = 'baggage.baggage'

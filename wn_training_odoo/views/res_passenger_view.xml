@@ -37,6 +37,7 @@
               <field name="weight"/>
               <field name="height"/>
               <field name="born_date"/>
+              <field name="age"/>
             </group>
           </sheet>
           <!-- End Sheet Form -->

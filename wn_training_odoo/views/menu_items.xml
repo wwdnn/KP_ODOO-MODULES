@@ -22,6 +22,7 @@
         name="Passenger"
         parent="root_menu_transportation_management"
         action="res_passenger_action"
+        groups="wn_training_odoo.group_passenger"
       />
 
       <!-- Action Bus -->
@@ -47,6 +48,7 @@
         id="res_bus_menu" 
         name="Bus"
         parent="root_menu_transportation_management"
+        groups="wn_training_odoo.group_staff"
       />
 
       <!-- Submenu Bus in menu bus -->
@@ -55,6 +57,7 @@
         name="Bus"
         parent="res_bus_menu"
         action="res_bus_action"
+        groups="wn_training_odoo.group_staff"
       />
 
       <!-- Submenu Driver in Menu Bus -->
@@ -63,6 +66,7 @@
         name="Driver"
         parent="res_bus_menu"
         action="driver_action"
+        groups="wn_training_odoo.group_staff"
       />
 
       <!-- Action Bus Schedule -->
@@ -78,6 +82,7 @@
         name="Schedule"
         parent="root_menu_transportation_management"
         action="bus_schedule_action"
+        groups="wn_training_odoo.group_staff"
       />
 
       <!-- Submenu Item Configuration -->
@@ -85,6 +90,7 @@
         id="root_menu_configuration" 
         name="Configuration"
         parent="root_menu_transportation_management"
+        groups="wn_training_odoo.group_staff"
       />
 
       <!-- Action Bus Route -->
@@ -100,6 +106,7 @@
         name="Route"
         parent="root_menu_configuration"
         action="bus_route_action"
+        groups="wn_training_odoo.group_staff"
       />
 
     </data>
