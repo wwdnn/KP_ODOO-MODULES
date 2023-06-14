@@ -59,7 +59,8 @@
                     style="
                       background-color: #0079FF;
                       border-radius: 25px;
-                      padding: 5px;
+                      padding-top: 5px;
+                      padding-bottom: 5px;
                       color: white;
                       font-weight: bold;
                       text-align: center;
