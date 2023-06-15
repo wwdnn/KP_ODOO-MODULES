@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+      <record id="action_report_class" model="ir.actions.report">
+          <field name="name">Class</field>
+          <field name="model">class.class</field>
+          <field name="report_type">qweb-pdf</field>
+          <field name="report_name">nti_training_academic.report_id_class</field>
+          <field name="report_file">nti_training_academic.report_id_class</field>
+          <field name="binding_model_id" ref="nti_training_academic.model_class_class"/>
+          <field name="binding_type">report</field>
+      </record>
+
+    </data>
+</odoo>

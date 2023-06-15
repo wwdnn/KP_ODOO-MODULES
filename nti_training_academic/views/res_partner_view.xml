@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="nti_training_academic_res_partner_view_tree">
+            <field name="name">nti.training.academic.res.partner.view.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <tree position="replace">
+                    <tree>
+                        <field name="name"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                    </tree>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="nti_training_academic_res_partner_view_form">
+            <field name="name">nti.training.academic.res.partner.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="birthday"/>
+                    <field name="age"/>
+                    <field name="is_lecturer" invisible="1"/>
+                </xpath>
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object" name="button_subjects" icon="fa-book" attrs="{'invisible': [('is_lecturer', '=', False)]}">
+                        <field string="Subjects" name="subject_line_ids" widget="statinfo"/>
+                    </button>
+                </div>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

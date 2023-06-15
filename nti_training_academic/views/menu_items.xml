@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+      <!-- Action Menu Student -->
+      <record id="nti_training_academic_action_student" model="ir.actions.act_window">
+          <field name="name">Student</field>
+          <field name="res_model">res.partner</field>
+          <field name="view_mode">tree,form</field>
+          <field name="domain">[('is_lecturer', '=', False)]</field>
+          <field name="context">{
+            'default_is_lecturer': False,
+          }</field>
+      </record>
+
+      <!-- Action Menu Lecturer -->
+      <record id="nti_training_academic_action_lecturer" model="ir.actions.act_window">
+          <field name="name">Lecturer</field>
+          <field name="res_model">res.partner</field>
+          <field name="view_mode">tree,form</field>
+          <field name="domain">[('is_lecturer', '=', True)]</field>
+          <field name="context">{
+            'default_is_lecturer': True,
+          }</field>
+      </record>
+
+      <!-- Action Menu Subjects -->
+      <record id="nti_training_academic_action_subjects" model="ir.actions.act_window">
+          <field name="name">Subjects</field>
+          <field name="res_model">subject.subject</field>
+          <field name="view_mode">tree,kanban,form</field>
+      </record>
+
+      <!-- Action Menu Class -->
+      <record id="nti_training_academic_action_class" model="ir.actions.act_window">
+          <field name="name">Class</field>
+          <field name="res_model">class.class</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <!-- Menu Root -->
+      <menuitem 
+        id="nti_training_academic_menu_root" 
+        name="University"
+        web_icon="nti_training_academic,static/description/icon_university.png"
+      />
+
+      <!-- Menu Student -->
+      <menuitem 
+        id="nti_training_academic_menu_student" 
+        name="Student"
+        parent="nti_training_academic_menu_root"
+        action="nti_training_academic_action_student"
+      />
+
+      <!-- Menu Lecturer -->
+      <menuitem 
+        id="nti_training_academic_menu_lecturer" 
+        name="Lecturer"
+        parent="nti_training_academic_menu_root"
+        action="nti_training_academic_action_lecturer"
+      />
+
+      <!-- Menu Subjects -->
+      <menuitem 
+        id="nti_training_academic_menu_subjects" 
+        name="Subjects"
+        parent="nti_training_academic_menu_root"
+        action="nti_training_academic_action_subjects"
+      />
+
+      <!-- Menu Class -->
+      <menuitem 
+        id="nti_training_academic_menu_class"
+        name="Class"
+        parent="nti_training_academic_menu_root"
+        action="nti_training_academic_action_class"
+      />
+
+    </data>
+</odoo>

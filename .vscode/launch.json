@@ -17,7 +17,7 @@
             "args": [
                 "--config=C:/Program Files/Odoo14/server/odoo.conf",
                 "--database=TRAINING",
-                "--update=wn_training_odoo"
+                "--update=wn_training_odoo,nti_training_academic"
             ]
         }
     ]
