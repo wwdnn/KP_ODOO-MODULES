@@ -6,7 +6,7 @@ class ResPartner(models.Model):
 
     birthday = fields.Date(string='Birthday')
     age = fields.Integer(string="Age", compute="_count_age")
-    is_lecturer = fields.Boolean(string='Lecturer', store=True,)
+    is_lecturer = fields.Boolean(string='Lecturer')
     subject_line_ids = fields.One2many(
         string='Subject(s)',
         comodel_name='subject.subject',
@@ -19,6 +19,7 @@ class ResPartner(models.Model):
             'view_mode': 'tree,form',
             'res_model': 'subject.subject',
             'domain': [('lecturer_id', '=', self.id)],
+            'context': {'default_lecturer_id': self.id},
             'type': 'ir.actions.act_window',
         }
 

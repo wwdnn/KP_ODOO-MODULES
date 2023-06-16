@@ -1,39 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data noupdate="0">
-      <!-- List View -->
-      <record id="subject_tree_view" model="ir.ui.view">
-          <field name="name">subject.tree.view</field>
-          <field name="model">subject.subject</field>
-          <field name="arch" type="xml">
-              <tree>
-                  <field name="name"/>
-                  <field name="lecturer_id"/>
-              </tree>
-          </field>
-      </record>
+  <data noupdate="0">
+    <!-- List View -->
+    <record id="subject_tree_view" model="ir.ui.view">
+      <field name="name">subject.tree.view</field>
+      <field name="model">subject.subject</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="lecturer_id"/>
+        </tree>
+      </field>
+    </record>
 
-      <!-- View Form -->
-      <record id="subject_view_form" model="ir.ui.view">
-          <field name="name">subject.view.form</field>
-          <field name="model">subject.subject</field>
-          <field name="arch" type="xml">
-              <form>
-                <header>
-                </header>
-                <sheet>
-                  <div class="oe_title">
+    <!-- Kanban View -->
+    <record model="ir.ui.view" id="subject_kanban">
+      <field name="name">subject.kanban</field>
+      <field name="model">subject.subject</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click" style="
+                  border-radius: 25px;
+                  padding: 0;
+                ">
+
+                <div class="subject-contents-wrapper" style="margin: 10px">
+                  <div class="subject-name-wrapper" style="text-align:center;">
                     <h1>
-                      <field name="name" />
+                      <field name="name"/>
                     </h1>
                   </div>
-                  <group>
-                    <field name="code"/>
-                    <field name="lecturer_id" domain="[('is_lecturer', '=', True)]"/>
-                  </group>
-                </sheet>
-              </form>
-          </field>
-      </record>
-    </data>
+
+                  <hr/>
+
+                  <div 
+                    class="Lecturer-wrapper" 
+                    style="
+                        background-color: #0079FF;
+                        border-radius: 25px;
+                        padding: 5px;
+                        text-align: center;
+                        font-weight: bold;
+                        color: white;
+                      ">
+                    <span style="margin-right: 5px;"> Lecturer : </span>
+                    <field name="lecturer_id"/>
+                  </div>
+
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <!-- End Kanban View -->
+
+    <!-- View Form -->
+    <record id="subject_view_form" model="ir.ui.view">
+      <field name="name">subject.view.form</field>
+      <field name="model">subject.subject</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+          </header>
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="name" />
+              </h1>
+            </div>
+            <group>
+              <field name="code"/>
+              <field name="lecturer_id" domain="[('is_lecturer', '=', True)]"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
 </odoo>

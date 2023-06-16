@@ -30,7 +30,13 @@
                     <field name="is_lecturer" invisible="1"/>
                 </xpath>
                 <div name="button_box" position="inside">
-                    <button class="oe_stat_button" type="object" name="button_subjects" icon="fa-book" attrs="{'invisible': [('is_lecturer', '=', False)]}">
+                    <button 
+                        class="oe_stat_button" 
+                        type="object" 
+                        name="button_subjects" 
+                        icon="fa-book" 
+                        attrs="{'invisible': [('is_lecturer', '=', False)]}"
+                    >
                         <field string="Subjects" name="subject_line_ids" widget="statinfo"/>
                     </button>
                 </div>
